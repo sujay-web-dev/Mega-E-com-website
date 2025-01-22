@@ -5,7 +5,7 @@ const cors = require('cors');
 const authRouter = require("./routes/auth/auth-routes")
 
 
-mongoose.connect('mongodb+srv://sujaypy:sujayEcomm2025@ecommcluster0.793qq.mongodb.net/')
+mongoose.connect(`mongodb+srv://sujaypy:${process.env.MONGO_PASSWORD}@ecommcluster0.793qq.mongodb.net/`)
     .then(() => {
         console.log("<----  Mongo DB Connected  ---->");
 
