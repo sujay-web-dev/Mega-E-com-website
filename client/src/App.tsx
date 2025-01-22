@@ -17,19 +17,19 @@ import ShoppingAccount from './pages/shopping-view/Account'
 import ShoppingCheckout from './pages/shopping-view/Checkout'
 import CheckAuth from './components/common/Check-auth'
 import UnauthPage from './pages/unAuth-page/UnauthPage'
+import { useSelector } from 'react-redux'
 
 function App() {
 
-  const isAuthenticated = false;
-  const user = {
-    name:"sujay",
-    role:"admin"
-  };
+  const {user,isAuthenticated} = useSelector(state=>state.auth)
+
+  console.log("user,isAuthenticated",user,isAuthenticated);
+  
+
 
   return (
     <div className='flex flex-col overflow-hidden bg-white'>
       {/* Common Components */}
-      <h4>Header Component</h4>
       <Routes>
 
         <Route path='/auth' element={<CheckAuth isAuthenticated={isAuthenticated} user={user}><AuthLayout /></CheckAuth>}>
