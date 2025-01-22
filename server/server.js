@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const authRouter = require("./routes/auth/auth-routes")
+require('dotenv').config();
 
 
 mongoose.connect(`mongodb+srv://sujaypy:${process.env.MONGO_PASSWORD}@ecommcluster0.793qq.mongodb.net/`)
